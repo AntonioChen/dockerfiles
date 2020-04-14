@@ -1,0 +1,6 @@
+version: "2"
+services:
+  phuck2:
+    build: .
+    ports:
+      - "127.0.0.1:9767:80"
