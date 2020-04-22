@@ -1,4 +1,4 @@
-# BUUSEC 2019 Sql Course 1
+# QWB 2019 SuperSqli
 
 version: "2"
 
@@ -6,7 +6,7 @@ services:
 
   web:
     build: .
-    image: glzjin/buusec_2019_sql_course_1
+    image: ctftraining/qwb_2019_supersqli
     restart: always
     ports:
       - "127.0.0.1:8302:80"

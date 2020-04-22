@@ -15,8 +15,24 @@
 
 <pre>
 <?php
+function waf1($inject) {
+    preg_match("/select|update|delete|drop|insert|where|\./",$inject) && die('return preg_match("/select|update|delete|drop|insert|where|\./",$inject);');
+}
+function waf2($inject) {
+    preg_match("/order| /i",$inject) && die('u can u up');
+}
+function replace($inject) {
+    $inject = str_ireplace("select","",$inject);
+    $inject = str_ireplace("by","",$inject);
+    $inject = str_ireplace("and","",$inject);
+    $inject = str_ireplace("union","",$inject);
+    return $inject;
+}
 if(isset($_GET['inject'])) {
     $id = $_GET['inject'];
+    $id = replace($id);
+    waf1($id);
+    waf2($id);
     $mysqli = new mysqli("127.0.0.1","root","root","supersqli");
     //多条sql语句
     $sql = "select * from `words` where id = '$id';";
