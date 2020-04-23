@@ -6,7 +6,6 @@
 </head>
 
 <body>
-<h1>取材于某次真实环境渗透，只说一句话：开发和安全缺一不可</h1>
 <!-- sqlmap是没有灵魂的 -->
 <form method="get">
     姿势: <input type="text" name="inject" value="1">
